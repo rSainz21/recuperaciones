@@ -10,11 +10,13 @@ select nombre, apellidos from personas where localidad="Torrelavega" and a_nac b
 select nombre, apellidos, a_nac, a_fall, a_fall - a_nac as edad from personas where a_fall is not null;
 -- 6
 select nombre, apellidos, 2025 - a_nac as edad from personas where a_fall is null;
+select nombre, apellidos, year(curdate()) - a_nac as edad from personas where a_fall is null and a_nac is not null;
 -- 7
-select id_rige, datediff(curdate(),fini) as dias_alcalde from rige where ffin is null;
+select id_rige, datediff(curdate(),fini) as dias_alcalde from personas
+inner join rige on alcalde=idpers where ffin is null;
 -- 8 
-select nombre, apellidos, partido from rige
-inner join personas on rige.id_rige=personas.idpers where rige.ffin is null;
+select nombre, apellidos, partido from personas
+inner join rige on personas.idpers=rige.id_rige where rige.ffin is null;
 -- 9
 select p.nombre, p.apellidos, r.partido, m.nombre  from rige r
 inner join personas p on r.id_rige=p.idpers
@@ -31,49 +33,64 @@ inner join municipios m on l.municipio=m.id
 inner join comarcas c on m.comarca=c.cod_com
 where c.nombre_com="Liebana" order by m.nombre asc, habitantes desc;
 -- 13
-select municipios.nombre , sum(habitantes) as poblacion_total from localidades
-inner join municipios on municipio=id group by municipio;
+select municipios.nombre , sum(habitantes) as poblacion_total from municipios
+inner join localidades on id=municipio group by nombre;
+
+select municipios.nombre ,if(sum(habitantes) is null,0,sum(habitantes)) as poblacion_total from municipios
+left join localidades on id=municipio group by id;
 -- 14
 select municipios.nombre, count(*) as num_localidades  from localidades
 inner join municipios on municipio=id group by municipio;
+
+select nombre,count(*) from municipios inner join localidades on id=municipio group by id;
+select nombre,count(habitantes) from municipios left join localidades on id=municipio group by nombre;
 -- 15
 select nombre_loc, habitantes from localidades
 inner join municipios on municipio=id where nombre="Camaleño" order by habitantes desc limit 3;
 -- 16
 select l1.* from localidades l1
 where habitantes= (select max(l2.habitantes) from localidades l2 where l2.municipio=l1.municipio);
+
+select l1.nombre_loc as localidad, l1.habitantes, m.nombre as municipio from localidades l1 inner join municipios m on l1.municipio=m.id;
 -- 17
 SELECT m2.nombre
 FROM limites l
-JOIN municipios m1 ON l.municmayor = m1.id
+inner JOIN municipios m1 ON l.municmayor = m1.id
 JOIN municipios m2 ON l.municmenor = m2.id
 WHERE m1.nombre = 'Guriezo'
 UNION
-SELECT m1.nombre
+SELECT m2.nombre
 FROM limites l
-JOIN municipios m1 ON l.municmayor = m1.id
-JOIN municipios m2 ON l.municmenor= m2.id
-WHERE m2.nombre = 'Guriezo';
+JOIN municipios m1 ON l.municmenor = m1.id
+JOIN municipios m2 ON l.municmayor= m2.id
+WHERE m1.nombre = 'Guriezo';
+-- otra forma mas facil de ver:
+select nombre from municipios where id in(select municmenor from limites inner join municipios on municmayor=id where nombre="Guriezo" union
+select municmayor from limites inner join municipios on municmayor=id where nombre="Guriezo");
+
 -- 18
 select nombre_loc, habitantes from localidades
 where habitantes>(select habitantes from localidades where nombre_loc="Potes") 
 and habitantes<(select habitantes from localidades where nombre_loc="Cabezón de la Sal");
 -- 19
+
 select nombre from municipios 
-inner join localidades  on id=municipio
+inner join localidades on id=municipio
 group by id, nombre having count(*)>(
 select count(*) from localidades 
 inner join municipios on municipio=id where nombre="Cabezón de la Sal");
+
+select nombre, count(*) from localidades
+inner join municipios on id=municipio
+group by nombre having count(*)>(
+select count(*) from localidades 
+inner join municipios on municipio=id where nombre="Cabezón de la Sal");
+
 -- 20
-select nombre, count(idpers) as concejales_totales from concejales
-inner join municipios on municipio=id
-inner join personas on concejales.idpers=personas.idpers
-left join(
-select concejales.municipio, count(*) as concejales_prc
-from concejales
-inner join personas on concejales.idpers=personas.idpers
-where partido="PRC" group by concejales.municipio) prc ON prc.municipio = id
-GROUP BY nombre, prc.concejales;
+
+select nombre, count(*) as total_concejales, sum(if(partido="PRC",1,0)) as prc_concejales
+from concejales inner join municipios on id=municipio group by nombre;
+
 -- 21
 insert into personas (nombre, apellidos, a_nac, localidad)
 values ("Diego","Revuelta Ceballos","1958","Santander");
