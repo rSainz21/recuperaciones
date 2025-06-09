@@ -1,0 +1,32 @@
+1. ¿cual es el metodo generico que utiliza la interfaz Comparator?
+
+la interfaz Comparable<T> utiliza el metodo generico int compare( T o1, T o2) para comparar dos objetos
+
+2. si se ha definido una clase contenedor generica.¿Esta permitido crear una instancia new contenedor[5]?
+
+No se puede usar arrays tipo genericos ni tampoco tablas de clases parametrizadas
+
+3. si tuvieras que definir arrays con genericos.¿que letra identifica mejor To U?
+
+En general, se usa la letra T para el tipo genérico, U para arrays, E para elementos de colecciones, K para claves, V para valores o N para números.
+
+4. ¿cuales son las interfaces genericas que hemos utilizado para la ordenacion en arrays?
+
+Arrays.sort
+
+5. ¿cual es el metodo generico que utiliza la interfaz comparable?
+
+public int compareTo( T o1, T o2)
+
+6. si hemos definido un array tipo generico. ¿se puede realizar la accion new U[10]?
+
+No se puede instanciar
+
+7. ¿cual es la diferencia de utilizar la interfaz comparable o comparator con genericos a utilizar sin genericos?
+
+Ventajas de los genéricos
+Reutilización de Código: Los genéricos permiten escribir código que puede trabajar con cualquier tipo de dato, lo que reduce la duplicación de código.
+Seguridad de Tipos: Al especificar el tipo de dato en tiempo de compilación, se evitan errores de tipo en tiempo de ejecución.
+Rendimiento: Los genéricos eliminan la necesidad de conversiones de tipo (casting), lo que puede mejorar el rendimiento del programa.
+
+
