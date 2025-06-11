@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Ejemplos de Formularios HTML</title>
+</head>
+<body>
+    <h1>Ejemplos de Formularios HTML, XHTML y CSS</h1>
+
+    <!-- Cuadro de texto -->
+    <h2>Cuadro de Texto</h2>
+    <form>
+        <label for="nombre">Nombre:</label>
+        <input type="text" id="nombre" placeholder="Introduce tu nombre">
+    </form>
+
+    <!-- Cuadro de contraseñas -->
+    <h2>Cuadro de Contraseñas</h2>
+    <form>
+        <label for="contrasena">Contraseña:</label>
+        <input type="password" id="contrasena" placeholder="Introduce tu contraseña">
+    </form>
+
+    <!-- Botones -->
+    <h2>Botones</h2>
+    <form>
+        <button type="submit">Enviar</button>
+        <button type="reset">Restablecer</button>
+    </form>
+
+    <!-- Controles ocultos -->
+    <h2>Controles Ocultos</h2>
+    <form>
+        <input type="hidden" name="usuario" value="12345">
+    </form>
+
+    <!-- Botones de radio -->
+    <h2>Botones de Radio</h2>
+    <form>
+        <label>
+            <input type="radio" name="sexo" value="m" checked> Mujer
+        </label>
+        <label>
+            <input type="radio" name="sexo" value="h"> Hombre
+        </label>
+    </form>
+
+    <!-- Casillas de verificación -->
+    <h2>Casillas de Verificación</h2>
+    <form>
+        <label>
+            <input type="checkbox" name="acepto" checked> Acepto los términos y condiciones
+        </label>
+    </form>
+
+    <!-- Cuadro de selección de archivo -->
+    <h2>Cuadro de Selección de Archivo</h2>
+    <form>
+        <label for="archivo">Selecciona un archivo:</label>
+        <input type="file" id="archivo" accept="image/*" multiple>
+    </form>
+
+    <!-- Cuadros numéricos -->
+    <h2>Cuadros Numéricos</h2>
+    <form>
+        <label for="numero">Número:</label>
+        <input type="number" id="numero" min="1" max="100" step="1" value="50">
+    </form>
+
+    <!-- Cuadros de fecha -->
+    <h2>Cuadros de Fecha</h2>
+    <form>
+        <label for="fecha">Fecha:</label>
+        <input type="date" id="fecha">
+    </form>
+
+    <!-- Cuadros de selección de hora -->
+    <h2>Cuadro de Selección de Hora</h2>
+    <form>
+        <label for="hora">Hora:</label>
+        <input type="time" id="hora">
+    </form>
+
+    <!-- Cuadros deslizantes -->
+    <h2>Cuadros Deslizantes</h2>
+    <form>
+        <label for="rango">Rango:</label>
+        <input type="range" id="rango" min="0" max="100" step="1" value="50">
+    </form>
+
+    <!-- Otros botones -->
+    <h2>Otros Botones</h2>
+    <form>
+        <label for="email">Correo electrónico:</label>
+        <input type="email" id="email" placeholder="ejemplo@dominio.com"><br>
+        <label for="url">URL:</label>
+        <input type="url" id="url" placeholder="https://www.ejemplo.com"><br>
+        <label for="buscar">Buscar:</label>
+        <input type="search" id="buscar" placeholder="Buscar..."><br>
+        <label for="telefono">Teléfono:</label>
+        <input type="tel" id="telefono" placeholder="123-456-7890"><br>
+        <label for="color">Color:</label>
+        <input type="color" id="color" value="#ff0000">
+    </form>
+
+    <!-- Botones modernos -->
+    <h2>Botones Modernos</h2>
+    <form>
+        <button type="button"><strong>Click</strong> aquí</button>
+    </form>
+
+    <!-- Cuadros combinados con agrupaciones -->
+    <h2>Cuadros Combinados</h2>
+    <form>
+        <label for="opciones">Opciones:</label>
+        <select id="opciones" name="opciones">
+            <optgroup label="Frutas">
+                <option value="manzana">Manzana</option>
+                <option value="platano">Plátano</option>
+                <option value="naranja">Naranja</option>
+            </optgroup>
+            <optgroup label="Verduras">
+                <option value="zanahoria">Zanahoria</option>
+                <option value="brocoli">Brócoli</option>
+                <option value="espinaca">Espinaca</option>
+            </optgroup>
+        </select>
+    </form>
+
+    <!-- Cuadros de texto multilínea -->
+    <h2>Cuadros de Texto Multilínea</h2>
+    <form>
+        <label for="comentarios">Comentarios:</label>
+        <textarea id="comentarios" rows="4" cols="50">Texto inicial</textarea>
+    </form>
+
+    <!-- Agrupación de controles con fieldset -->
+    <h2>Agrupación de Controles</h2>
+    <form>
+        <fieldset>
+            <legend>Información Personal</legend>
+            <label for="nombre2">Nombre:</label>
+            <input type="text" id="nombre2"><br>
+            <label for="edad">Edad:</label>
+            <input type="number" id="edad">
+        </fieldset>
+    </form>
+
+    <!-- Etiquetado de controles -->
+    <h2>Etiquetado de Controles</h2>
+    <form>
+        <label for="mensaje">Mensaje:</label>
+        <textarea id="mensaje"></textarea>
+    </form>
+
+    <!-- Datalist -->
+    <h2>Elemento Datalist</h2>
+    <form>
+        <label for="navegador">Elige tu navegador:</label>
+        <input list="navegadores" id="navegador" name="navegador">
+        <datalist id="navegadores">
+            <option value="Chrome">
+            <option value="Firefox">
+            <option value="Safari">
+            <option value="Edge">
+        </datalist>
+    </form>
+
+    <!-- Cuadro de tipo Keygen -->
+    <h2>Cuadro de Tipo Keygen</h2>
+    <form>
+        <label for="keygen">Keygen:</label>
+        <keygen id="keygen" name="keygen">
+    </form>
+
+    <!-- Cuadro de tipo Output -->
+    <h2>Cuadro de Tipo Output</h2>
+    <form oninput="resultado.value=parseInt(a.value)+parseInt(b.value)">
+        <label for="a">Número 1:</label>
+        <input type="number" id="a" value="50"> +
+        <label for="b">Número 2:</label>
+        <input type="number" id="b" value="50"> =
+        <output name="resultado" for="a b">100</output>
+    </form>
+
+    <!-- Barra de resultados -->
+    <h2>Barra de Resultados (Meter)</h2>
+    <form>
+        <label for="disk">Uso del disco:</label>
+        <meter id="disk" value="2" min="0" max="10">2 de 10</meter>
+    </form>
+
+    <!-- Progress -->
+    <h2>Barra de Progreso</h2>
+    <form>
+        <label for="file">Progreso de subida de archivo:</label>
+        <progress max="200" value="35">35%</progress>
+    </form>
+    <form>
+        <meter value="138" min="1" max="200" high="150" low="60">138</meter>
+    </form>
+</body>
+</html>
+

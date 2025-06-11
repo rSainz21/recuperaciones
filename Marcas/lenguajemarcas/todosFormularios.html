@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <title>Pagina Principal RVRN</title>
+    <meta charset="utf-8">
+    <meta name="description" content="Este es un documento HTML5">
+    <meta name="keywords" content="HTML, CSS, JavaScript">
+    <link rel="stylesheet" href="estiloFlex.css">
+  <title>Formulario HTML Completo</title>
+</head>
+<body>
+  <h1>Formulario con todos los tipos de controles HTML</h1>
+  <main>
+    <h2>ULTIMOS 5 MINUTOS PARA QUE FINALICE LA OFERTA!!!</h2>
+  <div class="barra">
+    <div class="progreso"></div>
+  </div>
+  </main>
+
+  <form action="#" method="post" enctype="multipart/form-data">
+    <!-- 1. Cuadro de texto -->
+    <label for="texto">Texto:</label>
+    <input type="text" id="texto" name="texto"><br><br>
+
+    <!-- 2. Contraseña -->
+    <label for="clave">Contraseña:</label>
+    <input type="password" id="clave" name="clave"><br><br>
+
+    <!-- 3. Botón de envío -->
+    <input type="submit" value="Enviar"><br><br>
+
+    <!-- 4. Botón de reset -->
+    <input type="reset" value="Limpiar"><br><br>
+
+    <!-- 5. Oculto -->
+    <input type="hidden" name="oculto" value="dato oculto">
+
+    <!-- 6. Botones de radio -->
+    <p>Sexo:</p>
+    <input type="radio" id="hombre" name="sexo" value="h">
+    <label for="hombre">Hombre</label>
+    <input type="radio" id="mujer" name="sexo" value="m">
+    <label for="mujer">Mujer</label><br><br>
+
+    <!-- 7. Casillas de verificación -->
+    <input type="checkbox" id="suscripcion" name="suscripcion" checked>
+    <label for="suscripcion">Suscribirse</label><br><br>
+
+    <!-- 8. Subida de archivos -->
+    <label for="archivo">Archivo:</label>
+    <input type="file" id="archivo" name="archivo" accept="image/*" multiple><br><br>
+
+    <!-- 9. Número -->
+    <label for="edad">Edad:</label>
+    <input type="number" id="edad" name="edad" min="0" max="120"><br><br>
+
+    <!-- 10. Fecha -->
+    <label for="fecha">Fecha de nacimiento:</label>
+    <input type="date" id="fecha" name="fecha"><br><br>
+
+    <!-- 11. Hora -->
+    <label for="hora">Hora:</label>
+    <input type="time" id="hora" name="hora"><br><br>
+
+    <!-- 12. Deslizador -->
+    <label for="nivel">Nivel:</label>
+    <input type="range" id="nivel" name="nivel" min="1" max="10"><br><br>
+
+    <!-- 13. Email -->
+    <label for="email">Email:</label>
+    <input type="email" id="email" name="email"><br><br>
+
+    <!-- 14. URL -->
+    <label for="web">Web:</label>
+    <input type="url" id="web" name="web"><br><br>
+
+    <!-- 15. Búsqueda -->
+    <label for="buscar">Buscar:</label>
+    <input type="search" id="buscar" name="buscar"><br><br>
+
+    <!-- 16. Teléfono -->
+    <label for="telefono">Teléfono:</label>
+    <input type="tel" id="telefono" name="telefono"><br><br>
+
+    <!-- 17. Selector de color -->
+    <label for="color">Color favorito:</label>
+    <input type="color" id="color" name="color"><br><br>
+
+    <!-- 18. Botón con etiqueta button -->
+    <button type="submit"><strong>Enviar con button</strong></button><br><br>
+
+    <!-- 19. Select (cuadro combinado) -->
+    <label for="pais">País:</label>
+    <select name="pais" id="pais">
+      <option value="es">España</option>
+      <option value="fr">Francia</option>
+      <option value="de">Alemania</option>
+    </select><br><br>
+
+    <!-- 20. Textarea -->
+    <label for="comentarios">Comentarios:</label><br>
+    <textarea id="comentarios" name="comentarios" rows="4" cols="50">Escribe aquí...</textarea><br><br>
+
+    <!-- 21. Fieldset y legend -->
+    <fieldset>
+      <legend>Datos adicionales</legend>
+      <label for="ciudad">Ciudad:</label>
+      <input type="text" id="ciudad" name="ciudad">
+    </fieldset><br><br>
+
+    <!-- 22. Datalist -->
+    <label for="lenguaje">Lenguaje favorito:</label>
+    <input list="lenguajes" id="lenguaje" name="lenguaje">
+    <datalist id="lenguajes">
+      <option value="HTML">
+      <option value="CSS">
+      <option value="JavaScript">
+    </datalist><br><br>
+
+    <!-- 23. Output -->
+    <label for="suma">Suma de 3 + 4 = </label>
+    <output id="suma">7</output><br><br>
+
+    <!-- 24. Meter -->
+    <label for="progreso">Nivel:</label>
+    <meter id="progreso" value="0.6" min="0" max="1">60%</meter><br><br>
+
+    <!-- 25. Progress -->
+    <label for="tarea">Progreso de tarea:</label>
+    <progress id="tarea" value="80" max="100">80%</progress><br><br>
+
+    <!-- 26. Validación con pattern -->
+    <label for="usuario">Usuario (solo minúsculas, 1-15 letras):</label>
+    <input type="text" id="usuario" name="usuario" pattern="[a-z]{1,15}" title="Solo letras minúsculas. Máximo 15 caracteres."><br><br>
+
+  </form>
+</body>
+</html>

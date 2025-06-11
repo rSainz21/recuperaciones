@@ -1,0 +1,89 @@
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    font-family: Arial, Helvetica, sans-serif;
+    background-image: url("fashion.jpg");
+    background-size: cover;
+    /* 🔥 Ajusta la imagen para cubrir toda la pantalla */
+    background-repeat: no-repeat;
+    /* ❌ Evita que se repita */
+    background-position: center;
+    /* 🎯 Centra la imagen */
+    margin: 0;
+    padding: 0;
+    /* ❌ Evita márgenes que recorten la imagen */
+}
+
+
+header {
+    display: flex;
+    justify-content: center;
+    order: 2;
+
+
+}
+
+
+header h1 {
+
+    color: rgb(255, 255, 255);
+    font-size: 40px;
+
+}
+
+
+
+nav {
+    display: flex;
+    text-align: left;
+    order: 1;
+    margin: 0;
+    padding: 0;
+
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+    gap: 20px;
+}
+
+nav a {
+    text-decoration: none;
+    color: #ffffff;
+}
+
+nav a:hover {
+    text-decoration: underline;
+}
+
+main {
+    display: flex;
+    order: 3;
+    padding-left: 150px;
+}
+
+.galeria {
+    display: flex;
+    gap: 20px;
+    justify-content: left;
+}
+
+.galeria img {
+    max-width: 200px;
+    height: auto;
+    border: 2px solid #ffffff;
+}
+
+
+footer {
+    display: flex;
+    justify-content: center;
+    width: 96%;
+    padding: 2%;
+    padding-top: 60px;
+    order: 4;
+    color: aliceblue;
+
+}
