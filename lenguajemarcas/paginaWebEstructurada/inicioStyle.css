@@ -1,0 +1,84 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Segoe UI', sans-serif;
+    background-color: #fafafa;
+    line-height: 1.6;
+}
+
+header,
+footer {
+    background-color: #222;
+    color: #fff;
+    text-align: center;
+    padding: 20px;
+}
+
+nav {
+    background-color: #444;
+    padding: 10px;
+    text-align: center;
+}
+
+nav a {
+    color: #fff;
+    text-decoration: none;
+    margin: 0 15px;
+    font-weight: bold;
+}
+
+main {
+    display: flex;
+    flex-direction: row-reverse;
+    /* Aside a la derecha */
+    padding: 20px;
+    gap: 20px;
+}
+
+aside {
+    width: 250px;
+    background-color: #eee;
+    padding: 15px;
+    border-radius: 8px;
+}
+
+section.tienda {
+    flex: 1;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 20px;
+}
+
+.producto {
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 10px;
+    text-align: center;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.producto img {
+    width: 100%;
+    height: auto;
+    border-radius: 6px;
+}
+
+.producto .nombre {
+    margin-top: 10px;
+    font-weight: bold;
+}
+
+.producto .precio {
+    color: #e91e63;
+    font-weight: bold;
+    margin-top: 5px;
+}
+
+footer {
+    margin-top: 40px;
+}
