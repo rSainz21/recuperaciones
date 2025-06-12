@@ -1,14 +1,43 @@
 /* 🧍 Estilo base con Flexbox */
 body {
-  margin: 0;
-  padding: 0;
-  font-family: 'Segoe UI', sans-serif;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  min-height: 100vh;
+
+  font-family: 'Orbitron', sans-serif;
   background: linear-gradient(to right, #1f4037, #99f2c8);
+  color: #fff;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  padding-top: 80px;
+  transition: background 0.4s;
 }
+
+nav {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 15px;
+  background: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(8px);
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 100;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+nav a:hover {
+  color: #00ffe1;
+  text-shadow: 0 0 5px #00ffe1;
+}
+
 
 .contenedor {
   display: flex;
@@ -36,6 +65,7 @@ body {
   font-size: 1.2rem;
   transition: all 0.3s ease;
 }
+
 .parrafo:hover {
   color: #00ffe1;
   transform: scale(1.05);
@@ -49,6 +79,7 @@ body {
   border-radius: 10px;
   transition: transform 0.4s ease, box-shadow 0.4s ease;
 }
+
 .imagen:hover {
   transform: scale(1.1) rotate(2deg);
   box-shadow: 0 0 20px rgba(0, 255, 255, 0.8);
@@ -60,6 +91,7 @@ body {
     opacity: 0;
     transform: translateY(-30px);
   }
+
   to {
     opacity: 1;
     transform: translateY(0);
@@ -76,6 +108,7 @@ body {
   cursor: pointer;
   transition: all 0.3s ease;
 }
+
 .boton:hover {
   background: #00c2a8;
   transform: scale(1.1);
@@ -93,12 +126,169 @@ body {
 }
 
 @keyframes arcoiris {
-  0% { background-position: 0% 50%; }
-  50% { background-position: 100% 50%; }
-  100% { background-position: 0% 50%; }
+  0% {
+    background-position: 0% 50%;
+  }
+
+  50% {
+    background-position: 100% 50%;
+  }
+
+  100% {
+    background-position: 0% 50%;
+  }
 }
 
 .texto-sombra:hover {
   text-shadow: 0 0 10px #fff, 0 0 20px #0ff, 0 0 30px #0ff;
 }
 
+.card {
+  width: 300px;
+  background: #fff;
+  color: #000;
+  border-radius: 15px;
+  padding: 20px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+  transform: scale(1.05) rotate(1deg);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+}
+
+input,
+select {
+  padding: 10px;
+  border-radius: 10px;
+  border: none;
+  margin-top: 10px;
+}
+
+input:focus,
+select:focus {
+  outline: none;
+  box-shadow: 0 0 5px #00ffe1;
+}
+
+body.dark {
+  background: #121212;
+  color: #ffffff;
+}
+
+.slider-css {
+  position: relative;
+  width: 600px;
+  height: 300px;
+  overflow: hidden;
+  margin: 30px auto;
+  border-radius: 15px;
+}
+
+input[type="radio"] {
+  display: none;
+}
+
+.slides {
+  display: flex;
+  width: 300%;
+  transition: all 0.5s ease-in-out;
+}
+
+.slide {
+  width: 100%;
+  flex-shrink: 0;
+  position: relative;
+  text-align: center;
+}
+
+.slide img {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+  border-radius: 15px;
+}
+
+.prev, .next {
+  position: absolute;
+  top: 50%;
+  font-size: 2rem;
+  color: white;
+  background: rgba(0,0,0,0.5);
+  padding: 10px;
+  cursor: pointer;
+  user-select: none;
+  transform: translateY(-50%);
+  border-radius: 10px;
+}
+
+.prev { left: 10px; }
+.next { right: 10px; }
+
+#slide1:checked ~ .slides { transform: translateX(0); }
+#slide2:checked ~ .slides { transform: translateX(-100%); }
+#slide3:checked ~ .slides { transform: translateX(-200%); }
+
+/* ==== MODAL SIN JS ==== */
+.modal-css {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: rgba(0, 0, 0, 0.7);
+  display: none;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-css:target {
+  display: flex;
+}
+
+.modal-contenido {
+  background: #fff;
+  color: #000;
+  padding: 30px;
+  border-radius: 15px;
+  max-width: 500px;
+  text-align: center;
+  position: relative;
+}
+
+.modal-contenido .cerrar {
+  position: absolute;
+  top: 10px; right: 15px;
+  text-decoration: none;
+  font-size: 24px;
+  color: red;
+}
+
+/* ==== LOGIN ==== */
+.login-box {
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(10px);
+  padding: 30px;
+  border-radius: 15px;
+  width: 300px;
+  box-shadow: 0 0 10px #00ffe1;
+  margin: 40px auto;
+}
+
+.login-box h2 {
+  margin-bottom: 20px;
+  color: #00ffe1;
+}
+
+.login-box input {
+  width: 100%;
+  padding: 10px;
+  margin: 10px 0;
+  border-radius: 10px;
+  border: none;
+  background: #fff;
+  color: #000;
+}
+
+.login-box input:focus {
+  outline: none;
+  box-shadow: 0 0 5px #00ffe1;
+}
