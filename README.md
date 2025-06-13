@@ -1,5 +1,5 @@
 # recuperaciones  
-![foto](https://image8.uhdpaper.com/wallpaper/the-mandalorian-darksaber-din-djarin-uhdpaper.com-4K-8.2571.jpg)
+![foto](https://github.com/rSainz21/recuperaciones/blob/imagenes/theMandalorian.jpg)
 Este repositorio tiene como objetivo guardar todo el material y ejercicios que estoy utilizando para los exámenes de recuperación.  
 
 ## Descripción  
