@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Ejemplo Flexbox</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      background-color: #f0f0f0;
+      padding: 30px;
+    }
+
+    .contenedor {
+      display: flex;                /* Activamos Flexbox */
+      flex-direction: row;         /* Dirección horizontal */
+      flex-wrap: wrap;             /* Que se ajusten si no caben */
+      justify-content: space-around; /* Espacio alrededor de los hijos */
+      align-items: center;         /* Centrado vertical */
+      background-color: #333;
+      padding: 20px;
+      height: 300px;
+      border-radius: 10px;
+    }
+
+    .item {
+      background-color: #4CAF50;
+      color: white;
+      padding: 20px;
+      margin: 10px;
+      text-align: center;
+      flex: 1 1 150px;   /* Que crezcan, se encojan, y tamaño base */
+      border-radius: 8px;
+      font-size: 1.2em;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Ejemplo de Flexbox en acción 💪</h1>
+
+  <div class="contenedor">
+    <div class="item">Elemento 1</div>
+    <div class="item">Elemento 2</div>
+    <div class="item">Elemento 3</div>
+    <div class="item">Elemento 4</div>
+  </div>
+
+</body>
+</html>

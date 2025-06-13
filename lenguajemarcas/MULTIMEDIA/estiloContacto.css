@@ -1,0 +1,106 @@
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    font-family: Arial, Helvetica, sans-serif;
+    background-image: url("fashion.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    margin: 0;
+    padding: 0;
+}
+
+.formulario {
+  max-width: 400px;
+  margin: 50px auto;
+  background-color: #0d780d70;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+  font-family: Arial, sans-serif;
+}
+
+.formulario h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: white;
+}
+
+.formulario form {
+  display: flex;
+  flex-direction: column;
+}
+
+.formulario label {
+  margin-top: 10px;
+  margin-bottom: 5px;
+  font-weight: bold;
+  text-align: center;
+  color: #ffffff;
+}
+
+.formulario input,
+.formulario textarea {
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 14px;
+}
+
+.formulario button {
+  margin-top: 20px;
+  
+  background-color: #ffffff;
+  color: rgb(0, 0, 0);
+  border: none;
+  border-radius: 5px;
+  font-size: 15px;
+  cursor: pointer;
+}
+
+.formulario button:hover {
+  background-color: #45a049;
+}
+
+
+nav {
+    display: flex;
+    text-align: left;
+    order: 1;
+    margin: 0;
+    padding: 0;
+
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+    gap: 20px;
+}
+
+nav a {
+    text-decoration: none;
+    color: #ffffff;
+}
+
+nav a:hover {
+    text-decoration: underline;
+}
+
+main {
+    display: flex;
+    order: 3;
+    padding-left: 150px;
+}
+
+footer {
+    display: flex;
+    justify-content: center;
+    width: 96%;
+    padding: 2%;
+    padding-top: 60px;
+    order: 4;
+    color: aliceblue;
+
+}

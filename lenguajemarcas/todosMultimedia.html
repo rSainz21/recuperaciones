@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Ejemplos de Elementos Multimedia</title>
+</head>
+
+<body>
+  <h1>Elementos Multimedia en HTML5</h1>
+
+  <!-- 1. Vídeo con atributos y múltiples fuentes -->
+  <h2>Vídeo</h2>
+  <video width="480" controls autoplay poster="f1.jpg">
+    <source src="carrera.mp4" type="video/mp4">
+    <source src="carrera.webm" type="video/webm">
+    Tu navegador no soporta el elemento de vídeo.
+  </video>
+
+  <!-- 2. Audio con múltiples fuentes -->
+  <h2>Audio</h2>
+  <audio controls>
+    <source src="audio.ogg" type="audio/ogg">
+    <source src="audio.mp3" type="audio/mpeg">
+    Tu navegador no soporta el elemento de audio.
+  </audio>
+
+  <!-- 3. Subtítulos para vídeo -->
+  <h2>Vídeo con subtítulos</h2>
+  <video width="480" controls>
+    <source src="documental.mp4" type="video/mp4">
+    <track src="subtitulos.vtt" kind="subtitles" srclang="es" label="Español" default>
+    Tu navegador no soporta el vídeo con subtítulos.
+  </video>
+
+  <!-- 4. Canvas con JavaScript -->
+  <h2>Canvas</h2>
+  <canvas id="miCanvas" width="200" height="100" style="border:1px solid #000000;"></canvas>
+  <script>
+    const canvas = document.getElementById('miCanvas');
+    const ctx = canvas.getContext('2d');
+    ctx.fillStyle = 'blue';
+    ctx.fillRect(10, 10, 150, 75);
+  </script>
+
+  <!-- 5. SVG dibujado directamente -->
+  <h2>SVG</h2>
+  <svg width="200" height="100">
+    <rect width="200" height="100" style="fill:lime;stroke-width:4;stroke:purple" />
+    <circle cx="100" cy="50" r="40" stroke="black" stroke-width="3" fill="red" />
+  </svg>
+
+  <!-- 6. Imagen clásica -->
+  <h2>Imagen</h2>
+  <img src="paisaje.jpg" alt="Paisaje bonito" width="400">
+
+  <!-- 7. Imagen con picture (versátil) -->
+  <h2>Imagen con picture</h2>
+  <picture>
+    <source srcset="imagen.webp" type="image/webp">
+    <source srcset="imagen.jpg" type="image/jpeg">
+    <img src="imagen.jpg" alt="Descripción de la imagen" width="400">
+  </picture>
+
+  <a href="https://www.ejemplo.com" target="_blank">
+    <img src="ruta/a/la/imagen.jpg" alt="Texto alternativo" width="200">
+  </a>
+
+</body>
+
+</html>

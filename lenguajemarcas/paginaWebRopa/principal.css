@@ -1,0 +1,200 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background-image: url(fondoLadrillosB.jpg);
+  background-size: cover;
+  background-repeat: no-repeat; 
+  background-position: center;
+  margin: 0;
+  padding: 0;
+
+  color: #000000;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.container {
+  width: 100%;
+  max-width: var(--max-width);
+  padding: 20px;
+}
+
+header {
+  background-image: url(fondoLadrillos.jpg);
+  color: rgb(255, 255, 255);
+  padding: 20px;
+  border-radius: 8px;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+/* NAVIGATION MENU */
+nav {
+  background-color: rgb(0, 0, 0);
+  border-radius: 8px;
+  margin-bottom: 20px;
+}
+
+nav ul {
+
+  align-items: center;
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+nav ul li {
+  position: relative;
+}
+
+nav>ul>li {
+  margin: 0 15px;
+}
+
+nav a {
+  display: block;
+  padding: 15px 20px;
+  color: rgb(255, 255, 255);
+  text-decoration: none;
+  font-weight: bold;
+}
+
+nav li:hover>a {
+  background-color: #ff0000;
+  text-decoration: line-through;
+  text-transform: uppercase;
+}
+
+/* Submenu */
+nav li ul {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: #000000;
+  border-radius: 0 0 8px 8px;
+  min-width: 180px;
+  z-index: 1000;
+}
+
+nav li:hover ul {
+  display: block;
+  background-color: rgb(0, 0, 0);
+
+}
+
+nav li ul li {
+  width: 100%;
+}
+
+nav li ul a {
+  padding: 12px 15px;
+}
+
+main {
+  display: flex;
+
+  flex-wrap: wrap;
+
+  justify-content: center;
+  align-items: flex-start;
+  gap: 40px;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+article {
+  flex: 2;
+  background-color: rgb(168, 168, 168);
+  text-align: center;
+  padding: 20px;
+  border-radius: 8px;
+}
+
+article h1 {
+  margin-bottom: 5px;
+  font: bold 30px Georgia, sans-serif;
+}
+
+article p {
+  font: 18px Georgia, sans-serif;
+  margin-bottom: 20px;
+}
+
+article a {
+  text-decoration: none;
+  color: #ff0000;
+}
+
+article a:hover {
+  text-transform: uppercase;
+}
+
+figure {
+  margin: 10px 0px;
+}
+
+figure img {
+  width: 250px;
+  max-width: 98%;
+  padding: 1%;
+  border-radius: 18px;
+}
+
+figure img:hover {
+  cursor: pointer;
+  border: 2px solid black;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+  transform: scale(1.1);
+  transition: 0.3s ease;
+
+}
+
+aside {
+  flex: 1;
+  flex-direction: column;
+  background-image: url(versace.jpg);
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+}
+
+aside li {
+  list-style: none;
+  color:rgb(255, 255, 255);
+}
+
+aside a {
+  padding: 0px;
+  color: rgb(255, 255, 255);
+  text-decoration: none;
+  
+}
+
+nav>ul>li {
+  margin: 0 15px;
+}
+
+aside li:hover {
+  background-color: #545454;
+  text-decoration: line-through;
+  text-transform: uppercase;
+  cursor:pointer;
+}
+
+footer {
+  background-color: var(--color-oscuro);
+  color: rgb(0, 0, 0);
+  text-align: center;
+  padding: 15px;
+  border-radius: 8px;
+  margin-top: 30px;
+}

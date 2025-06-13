@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Ejemplos de Tablas en HTML</title>
+  <style>
+    table {
+      width: 100%;
+      border: 1px solid black;
+      border-collapse: collapse;
+      text-align: center;
+      margin-bottom: 40px;
+    }
+    th, td {
+      border: 1px solid black;
+      padding: 5px;
+    }
+    thead {
+      font-weight: bold;
+      background-color: #ccc;
+    }
+    tbody tr {
+      background-color: #fadddd;
+    }
+    tfoot {
+      background-color: #f4fdcb;
+    }
+  </style>
+</head>
+<body>
+  <h1>Ejemplos de Tablas en HTML</h1>
+
+  <!-- 1. Tabla sencilla -->
+  <h2>Tabla Sencilla</h2>
+  <table border="1">
+    <caption>Tabla Básica</caption>
+    <tr>
+      <th>Nombre</th>
+      <th>Edad</th>
+    </tr>
+    <tr>
+      <td>Ana</td>
+      <td>23</td>
+    </tr>
+    <tr>
+      <td>Luis</td>
+      <td>30</td>
+    </tr>
+  </table>
+
+  <!-- 2. Tabla con combinación de columnas (colspan) -->
+  <h2>Tabla con Colspan</h2>
+  <table border="1">
+    <tr>
+      <td colspan="2">Combinación columnas 1 y 2</td>
+      <td>Columna 3</td>
+      <td colspan="2">Combinación columnas 4 y 5</td>
+    </tr>
+    <tr>
+      <td>A</td>
+      <td>B</td>
+      <td>C</td>
+      <td>D</td>
+      <td>E</td>
+    </tr>
+    <tr>
+      <td>1</td>
+      <td>2</td>
+      <td>3</td>
+      <td colspan="2">Combinación columnas 4 y 5</td>
+    </tr>
+  </table>
+
+  <!-- 3. Tabla con combinación de filas (rowspan) -->
+  <h2>Tabla con Rowspan</h2>
+  <table border="1">
+    <tr>
+      <td rowspan="2">Fila 1 y 2</td>
+      <td>Celda 1</td>
+    </tr>
+    <tr>
+      <td>Celda 2</td>
+    </tr>
+  </table>
+
+  <!-- 4. Tabla con combinación de filas y columnas -->
+  <h2>Tabla con Rowspan y Colspan</h2>
+  <table border="1">
+    <tr>
+      <td rowspan="2" colspan="2">Grande</td>
+      <td>Celda</td>
+    </tr>
+    <tr>
+      <td>Otra</td>
+    </tr>
+    <tr>
+      <td>1</td>
+      <td>2</td>
+      <td>3</td>
+    </tr>
+  </table>
+
+  <!-- 5. Tabla avanzada con thead, tbody, tfoot y colgroup -->
+  <h2>Tabla Avanzada</h2>
+  <table>
+    <colgroup>
+      <col style="width: 20%;">
+      <col style="width: 40%;">
+      <col style="width: 40%;">
+    </colgroup>
+    <thead>
+      <tr>
+        <td rowspan="3"></td>
+        <td colspan="6">Ventas coches</td>
+      </tr>
+      <tr>
+        <td colspan="2">1T</td>
+        <td colspan="2">2T</td>
+        <td colspan="2">3T</td>
+      </tr>
+      <tr>
+        <td>Nacional</td>
+        <td>Importado</td>
+        <td>Nacional</td>
+        <td>Importado</td>
+        <td>Nacional</td>
+        <td>Importado</td>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>2014</td><td>341</td><td>561</td><td>234</td><td>129</td><td>340</td><td>261</td>
+      </tr>
+      <tr>
+        <td>2015</td><td>341</td><td>561</td><td>234</td><td>129</td><td>340</td><td>261</td>
+      </tr>
+      <tr>
+        <td>2016</td><td>341</td><td>561</td><td>234</td><td>129</td><td>340</td><td>261</td>
+      </tr>
+      <tr>
+        <td>2017</td><td>741</td><td>263</td><td>721</td><td>841</td><td>590</td><td>251</td>
+      </tr>
+    </tbody>
+    <tfoot>
+      <tr>
+        <td>Total</td><td>1082</td><td>824</td><td>955</td><td>970</td><td>930</td><td>512</td>
+      </tr>
+    </tfoot>
+  </table>
+</body>
+</html>
