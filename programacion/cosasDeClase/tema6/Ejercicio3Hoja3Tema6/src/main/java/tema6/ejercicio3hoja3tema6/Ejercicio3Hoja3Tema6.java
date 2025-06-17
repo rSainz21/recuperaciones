@@ -11,73 +11,22 @@ package tema6.ejercicio3hoja3tema6;
 public class Ejercicio3Hoja3Tema6 {
 
     public static void main(String[] args) {
-        
-class Cliente {
-    private int codigo;
-    private String nombre;
-    private String apellidos;
-    private String telefono;
-    private double saldo;
+        Banco banco = new Banco();
 
-    public Cliente(int codigo, String nombre, String apellidos, String telefono, double saldo) {
-        this.codigo = codigo;
-        this.nombre = nombre;
-        this.apellidos = apellidos;
-        this.telefono = telefono;
-        this.saldo = saldo;
-    }
+        banco.ingresarCliente(new Cliente("001", "Juan", "Pérez", "123456789", 1500.50));
+        banco.ingresarCliente(new Cliente("002", "Ana", "Gómez", "987654321", 2500));
+        banco.ingresarCliente(new Cliente("003", "Luis", "Martínez", "555555555", 1200));
 
-    public int getCodigo() {
-        return codigo;
-    }
+        System.out.println("Cliente con saldo mayor:");
+        System.out.println(banco.clienteConSaldoMayor());
 
-    public double getSaldo() {
-        return saldo;
-    }
+        System.out.println("\nBuscar cliente código 002:");
+        System.out.println(banco.buscarCliente("002"));
 
-    public void setSaldo(double saldo) {
-        this.saldo = saldo;
-    }
+        System.out.println("\nEliminar cliente código 001:");
+        banco.eliminarCliente("001");
 
-    @Override
-    public String toString() {
-        return "Código: " + codigo + ", Nombre: " + nombre + ", Apellidos: " + apellidos +
-               ", Teléfono: " + telefono + ", Saldo: " + saldo;
+        System.out.println("\nListado clientes:");
+        banco.mostrarClientes();
     }
 }
-
-class Banco {
-    private Map<Integer, Cliente> usuarios;
-
-    public Banco() {
-        usuarios = new LinkedHashMap<>(); // Mantiene el orden de inserción y evita duplicados.
-    }
-
-    public void agregarUsuario(Cliente cliente) {
-        if (usuarios.containsKey(cliente.getCodigo())) {
-            System.out.println("El cliente con este código ya existe.");
-        } else {
-            usuarios.put(cliente.getCodigo(), cliente);
-        }
-    }
-
-    public Cliente buscarUsuario(int codigo) {
-        return usuarios.getOrDefault(codigo, null);
-    }
-
-    public void eliminarUsuario(int codigo) {
-        if (usuarios.containsKey(codigo)) {
-            usuarios.remove(codigo);
-        } else {
-            System.out.println("El cliente con este código no existe.");
-        }
-    }
-
-    public Cliente clienteConSaldoMayor() {
-        Optional<Cliente> maxSaldoCliente = usuarios.values().stream()
-                .max((c1, c2) -> Double.compare(c1.getSaldo(), c2.getSaldo()));
-        return maxSaldoCliente.orElse(null); // Devuelve null si no hay clientes.
-    }
-}
-
-public

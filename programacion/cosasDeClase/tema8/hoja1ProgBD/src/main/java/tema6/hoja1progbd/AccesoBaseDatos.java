@@ -17,8 +17,8 @@ public class AccesoBaseDatos {
     private Connection conn = null; 
     private static final String BD = "bd_prog_01";
     private static final String USUARIO = "root";
-    private static final String CLAVE = "mysql";
-    private static final String URL = "jdbc:mysql://localhost:3307/" + BD;
+    private static final String CLAVE = "Axcpjrib2005";
+    private static final String URL = "jdbc:mysql://localhost:3306/" + BD;
 
     private AccesoBaseDatos() {
 
